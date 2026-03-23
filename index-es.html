@@ -1,232 +1,752 @@
 <!DOCTYPE html>
-<html lang="es-MX">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>mx711 - Guía de Bonos para Nuevos</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:#f5f5f5;max-width:480px;margin:0 auto;line-height:1.5}
-.header{background:linear-gradient(135deg,#1a237e,#283593);color:#fff;padding:25px 20px;text-align:center}
-.header h1{font-size:22px;margin-bottom:8px;font-weight:700}
-.header p{font-size:13px;opacity:0.9}
-.badges{display:flex;justify-content:center;gap:8px;margin-top:12px;flex-wrap:wrap;font-size:11px}
-.badge{background:rgba(255,255,255,0.2);padding:4px 8px;border-radius:12px}
-.hero{background:linear-gradient(135deg,#ff6b35,#f7931e);color:#fff;padding:40px 20px;text-align:center}
-.hero h2{font-size:18px;margin-bottom:10px;font-weight:500}
-.bonus{font-size:48px;font-weight:700;margin:15px 0;line-height:1.2}
-.subtitle{font-size:14px;opacity:0.95}
-.bonus-detail{font-size:13px;margin-top:12px;opacity:0.9}
-.cta{display:block;background:#4CAF50;color:#fff;text-align:center;padding:18px;margin:25px 20px;border-radius:8px;text-decoration:none;font-size:17px;font-weight:700;box-shadow:0 4px 12px rgba(76,175,80,0.3);transition:transform 0.2s}
-.cta:active{transform:scale(0.98)}
-.cta-sub{text-align:center;color:#666;font-size:12px;margin:-15px 0 25px}
-.section{background:#fff;padding:25px 20px;border-bottom:1px solid #eee}
-.section h3{color:#1a237e;font-size:17px;margin-bottom:15px;font-weight:600}
-.pitfall{background:#ffebee;padding:12px;border-radius:6px;margin-bottom:10px;border-left:3px solid #c62828}
-.pitfall h4{color:#c62828;font-size:13px;margin-bottom:4px;font-weight:600}
-.pitfall p{color:#666;font-size:12px;line-height:1.6}
-table{width:100%;border-collapse:collapse;margin:15px 0;font-size:12px}
-th{background:#1a237e;color:#fff;padding:10px 5px;font-weight:600}
-td{padding:10px 5px;border-bottom:1px solid #eee;text-align:center}
-tr.highlight{background:#e8f5e9}
-.benefit{display:flex;align-items:flex-start;margin-bottom:12px}
-.benefit .icon{width:26px;height:26px;background:#4CAF50;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-right:10px;flex-shrink:0;font-size:13px;font-weight:700}
-.benefit p{font-size:13px;color:#333;margin-top:2px}
-.countdown{background:linear-gradient(135deg,#ff6b35,#f7931e);color:#fff;padding:25px;text-align:center;margin:20px;border-radius:8px}
-.timer{font-size:32px;font-weight:700;margin:12px 0;font-family:'Courier New',monospace}
-.quota{font-size:14px;margin-top:8px}
-.testimonial{background:#f9f9f9;padding:15px;border-radius:8px;margin-bottom:12px;border-left:3px solid #ffc107}
-.testimonial p{font-size:13px;color:#666;font-style:italic;margin-bottom:6px;line-height:1.6}
-.testimonial .author{font-size:11px;color:#999}
-.stars{color:#ffc107;letter-spacing:2px}
-.faq{margin-bottom:15px}
-.faq h4{color:#1a237e;font-size:13px;margin-bottom:5px;font-weight:600}
-.faq p{color:#666;font-size:12px;line-height:1.6}
-.footer{background:#263238;color:#90a4ae;padding:25px 20px;text-align:center;font-size:11px}
-.footer p{margin-bottom:6px}
-.warning{background:#fff3e0;color:#e65100;padding:12px;border-radius:6px;margin-top:15px;font-size:10px;line-height:1.5}
-.lang-switch{position:fixed;top:10px;right:10px;z-index:1000;display:flex;gap:5px}
-.lang-btn{background:rgba(0,0,0,0.6);color:#fff;border:none;padding:6px 10px;border-radius:4px;font-size:11px;cursor:pointer;text-decoration:none}
-.lang-btn.active{background:#4CAF50}
-.steps{counter-reset:step}
-.step-item{display:flex;margin-bottom:15px;position:relative}
-.step-number{width:32px;height:32px;background:#1a237e;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-right:12px;flex-shrink:0;font-weight:700;font-size:14px}
-.step-content{flex:1}
-.step-content h4{color:#1a237e;font-size:13px;margin-bottom:3px;font-weight:600}
-.step-content p{color:#666;font-size:12px;line-height:1.5}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bonus Hunter's Guide - Maximize Your Casino Winnings</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+      color: #ffffff;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 15px 5%;
+      background: rgba(0,0,0,0.8);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffd700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: #ffffff;
+    }
+
+    .tagline {
+      font-size: 14px;
+      color: #888;
+      margin-top: 5px;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 120px 5% 60px;
+      text-align: center;
+      background: radial-gradient(ellipse at center, rgba(255,215,0,0.1) 0%, transparent 70%);
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .hero h1 span {
+      color: #ffd700;
+    }
+
+    .hero .slogan {
+      font-size: 20px;
+      color: #cccccc;
+      margin-bottom: 30px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .alert-box {
+      display: inline-block;
+      padding: 15px 30px;
+      background: rgba(76, 175, 80, 0.2);
+      border: 2px solid #4caf50;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .alert-box span {
+      color: #4caf50;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    /* How It Works */
+    .how-it-works {
+      padding: 60px 5%;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 50px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .section-title span {
+      color: #ffd700;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .step-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,215,0,0.2);
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      position: relative;
+    }
+
+    .step-number {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #ffd700, #ffaa00);
+      color: #000;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .step-card h3 {
+      margin-top: 15px;
+      font-size: 20px;
+      color: #ffd700;
+      margin-bottom: 10px;
+    }
+
+    .step-card p {
+      color: #cccccc;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    /* Bonus Calculator */
+    .calculator {
+      padding: 60px 5%;
+      background: rgba(0,0,0,0.3);
+    }
+
+    .calc-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(255,170,0,0.05));
+      border: 2px solid rgba(255,215,0,0.3);
+      border-radius: 20px;
+      padding: 40px;
+    }
+
+    .calc-title {
+      text-align: center;
+      font-size: 28px;
+      color: #ffd700;
+      margin-bottom: 30px;
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .calc-item {
+      text-align: center;
+    }
+
+    .calc-item label {
+      display: block;
+      color: #888;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .calc-item .value {
+      font-size: 36px;
+      font-weight: bold;
+      color: #ffd700;
+    }
+
+    .calc-item .sub {
+      font-size: 12px;
+      color: #666;
+      margin-top: 5px;
+    }
+
+    .calc-total {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .calc-total .label {
+      font-size: 16px;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    .calc-total .amount {
+      font-size: 56px;
+      font-weight: bold;
+      background: linear-gradient(135deg, #ffd700, #ffaa00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Promotions */
+    .promotions {
+      padding: 60px 5%;
+    }
+
+    .promo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .promo-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,215,0,0.2);
+      border-radius: 20px;
+      padding: 35px;
+      position: relative;
+    }
+
+    .promo-card.featured {
+      border-color: #ffd700;
+      background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(255,170,0,0.05));
+    }
+
+    .promo-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #ff4444;
+      color: #fff;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .promo-card h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #ffd700;
+    }
+
+    .promo-card .site-name {
+      color: #888;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .promo-amount {
+      font-size: 42px;
+      font-weight: bold;
+      color: #ffd700;
+      margin-bottom: 15px;
+    }
+
+    .promo-card ul {
+      list-style: none;
+      margin-bottom: 25px;
+    }
+
+    .promo-card li {
+      color: #cccccc;
+      margin-bottom: 10px;
+      padding-left: 25px;
+      position: relative;
+      font-size: 14px;
+    }
+
+    .promo-card li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #4caf50;
+      font-weight: bold;
+    }
+
+    .promo-cta {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, #ffd700, #ffaa00);
+      color: #000;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    .promo-cta:hover {
+      transform: scale(1.02);
+      box-shadow: 0 5px 20px rgba(255,215,0,0.3);
+    }
+
+    /* Tips Section */
+    .tips {
+      padding: 60px 5%;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .tip-card {
+      background: rgba(255,255,255,0.05);
+      border-left: 4px solid #ffd700;
+      padding: 25px;
+      border-radius: 0 15px 15px 0;
+    }
+
+    .tip-card h4 {
+      color: #ffd700;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .tip-card p {
+      color: #cccccc;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .tip-card .warning {
+      color: #ff9800;
+      font-size: 13px;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Trust Badges */
+    .trust {
+      padding: 50px 5%;
+      background: rgba(0,0,0,0.5);
+      text-align: center;
+    }
+
+    .trust-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 30px;
+    }
+
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .trust-icon {
+      font-size: 36px;
+    }
+
+    .trust-item span {
+      color: #888;
+      font-size: 13px;
+    }
+
+    /* CTA Section */
+    .final-cta {
+      padding: 80px 5%;
+      text-align: center;
+      background: radial-gradient(ellipse at center, rgba(255,215,0,0.15) 0%, transparent 70%);
+    }
+
+    .final-cta h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .final-cta h2 span {
+      color: #ffd700;
+    }
+
+    .final-cta p {
+      font-size: 18px;
+      color: #cccccc;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-btn {
+      padding: 18px 45px;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .cta-btn-primary {
+      background: linear-gradient(135deg, #ffd700, #ffaa00);
+      color: #000;
+    }
+
+    .cta-btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 40px rgba(255,215,0,0.4);
+    }
+
+    .cta-btn-secondary {
+      background: transparent;
+      border: 2px solid #ffd700;
+      color: #ffd700;
+    }
+
+    .cta-btn-secondary:hover {
+      background: rgba(255,215,0,0.1);
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 5% 30px;
+      background: rgba(0,0,0,0.8);
+      text-align: center;
+    }
+
+    .disclaimer {
+      max-width: 800px;
+      margin: 0 auto 30px;
+      padding: 20px;
+      background: rgba(255,152,0,0.1);
+      border: 1px solid rgba(255,152,0,0.3);
+      border-radius: 10px;
+      font-size: 13px;
+      color: #ff9800;
+      line-height: 1.6;
+    }
+
+    .footer-bottom {
+      color: #666;
+      font-size: 13px;
+    }
+
+    .age-restriction {
+      display: inline-block;
+      background: #ff4444;
+      color: #fff;
+      padding: 5px 15px;
+      border-radius: 5px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 28px;
+      }
+      
+      .hero .slogan {
+        font-size: 16px;
+      }
+      
+      .calc-total .amount {
+        font-size: 42px;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .cta-btn {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <!-- Header -->
+  <header>
+    <div class="logo">Bonus<span>Hunter</span></div>
+    <p class="tagline">Your Guide to Maximum Casino Bonuses</p>
+  </header>
 
-<div class="lang-switch">
-<a href="mx711-landing-es.html" class="lang-btn active">ES</a>
-<a href="mx711-landing-zh.html" class="lang-btn">中文</a>
-<a href="mx711-landing-en.html" class="lang-btn">EN</a>
-</div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>mx711 <span>Bono para Nuevos</span></h1>
+    <p class="slogan">Hasta 2777 MXN Primer Depósito + Bono Continuo + Bono Sorpresa 7777 MXN<br>Licencia de Curaçao · Seguro y Confiable</p>
+    <div class="alert-box"><span>✅ Exclusivo Nuevos: 2777 MXN Primer Depósito + 7777 MXN Bono Sorpresa</span></div>
+  </section>
 
-<div class="header">
-<h1>🎯 Guía de Bonos mx711</h1>
-<p>Primera vez? Regístrate y obtén hasta 170% de bono</p>
-<div class="badges">
-<span class="badge">✅ Certificado Oficial</span>
-<span class="badge">✅ Retiro Seguro</span>
-<span class="badge">✅ Soporte 24/7</span>
-</div>
-</div>
+  <!-- How It Works -->
+  <section class="how-it-works">
+    <h2 class="section-title">How to <span>Maximize Your Bonus</span></h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h3>Choose Your Bonus</h3>
+        <p>Pick from our verified list of casinos with the best welcome offers</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h3>Register Account</h3>
+        <p>Click our link and complete signup (takes 2-3 minutes)</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h3>Make First Deposit</h3>
+        <p>Deposit minimum amount to activate your welcome bonus</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">4</div>
+        <h3>Meet Wagering</h3>
+        <p>Follow our strategy to clear requirements efficiently</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">5</div>
+        <h3>Withdraw Winnings</h3>
+        <p>Cash out your profits - most process within 24 hours</p>
+      </div>
+    </div>
+  </section>
 
-<div class="hero">
-<h2>🎁 Bono Exclusivo para Nuevos</h2>
-<div class="bonus">$2,777</div>
-<p class="subtitle">Bono de acceso + Bono de referido</p>
-<p class="bonus-detail">Gana hasta $137 por cada invitado · Premios 24 horas</p>
-</div>
+  <!-- Bonus Calculator -->
+  <section class="calculator">
+    <div class="calc-container">
+      <h3 class="calc-title">💰 Potential Bonus Value</h3>
+      <div class="calc-grid">
+        <div class="calc-item">
+          <label>Welcome Bonus</label>
+          <div class="value">$500</div>
+          <div class="sub">100% match</div>
+        </div>
+        <div class="calc-item">
+          <label>Free Spins</label>
+          <div class="value">50</div>
+          <div class="sub">On selected slots</div>
+        </div>
+        <div class="calc-item">
+          <label>Weekly Cashback</label>
+          <div class="value">15%</div>
+          <div class="sub">Every Monday</div>
+        </div>
+        <div class="calc-item">
+          <label>Referral Bonus</label>
+          <div class="value">$100</div>
+          <div class="sub">Per friend</div>
+        </div>
+      </div>
+      <div class="calc-total">
+        <div class="label">Maximum Total Value</div>
+        <div class="amount">$2,500+</div>
+        <p style="color: #666; font-size: 13px; margin-top: 10px;">*Based on optimal bonus stacking strategy</p>
+      </div>
+    </div>
+  </section>
 
-<a href="https://mx711.com" class="cta">👉 Registrarse Ahora</a>
-<p class="cta-sub">30 segundos · Solo 100 cupos · 2026</p>
+  <!-- Promotions -->
+  <section class="promotions">
+    <h2 class="section-title">🎁 <span>Best Bonuses Right Now</span></h2>
+    <div class="promo-grid">
+      <div class="promo-card featured">
+        <div class="promo-badge">TOP PICK</div>
+        <h3>Ultimate Welcome Package</h3>
+        <p class="site-name">BetStar Pro Casino</p>
+        <div class="promo-amount">$500 + 50 FS</div>
+        <ul>
+          <li>100% match on first deposit (up to $500)</li>
+          <li>50 free spins on Starburst slot</li>
+          <li>35x wagering requirement (industry low!)</li>
+          <li>No maximum cashout limit</li>
+          <li>Valid for 30 days</li>
+        </ul>
+        <a href="#" class="promo-cta">👉 Claim This Bonus</a>
+      </div>
+      <div class="promo-card">
+        <h3>High Roller Bonus</h3>
+        <p class="site-name">VIP Casino Club</p>
+        <div class="promo-amount">$1000 + 100 FS</div>
+        <ul>
+          <li>100% match up to $1,000</li>
+          <li>100 free spins on Book of Dead</li>
+          <li>Personal account manager</li>
+          <li>Higher withdrawal limits</li>
+          <li>Exclusive VIP promotions</li>
+        </ul>
+        <a href="#" class="promo-cta">👉 Claim This Bonus</a>
+      </div>
+      <div class="promo-card">
+        <h3>No Wagering Spins</h3>
+        <p class="site-name">Fair Play Casino</p>
+        <div class="promo-amount">100 Wager-Free Spins</div>
+        <ul>
+          <li>100 free spins with NO wagering</li>
+          <li>Keep what you win - instant cashout</li>
+          <li>No deposit required</li>
+          <li>Valid on top 5 slots</li>
+          <li>New players only</li>
+        </ul>
+        <a href="#" class="promo-cta">👉 Claim This Bonus</a>
+      </div>
+    </div>
+  </section>
 
-<div class="section">
-<h3>📋 Registro en 3 Pasos</h3>
-<div class="step-item">
-<div class="step-number">1</div>
-<div class="step-content">
-<h4>Haz clic en el botón</h4>
-<p>Toca el botón verde para ir al sitio oficial</p>
-</div>
-</div>
-<div class="step-item">
-<div class="step-number">2</div>
-<div class="step-content">
-<h4>Completa tus datos</h4>
-<p>Teléfono/email + contraseña, 30 segundos</p>
-</div>
-</div>
-<div class="step-item">
-<div class="step-number">3</div>
-<div class="step-content">
-<h4>Primer depósito = Bono</h4>
-<p>El bono del 170% se activa automáticamente</p>
-</div>
-</div>
-</div>
+  <!-- Tips Section -->
+  <section class="tips">
+    <h2 class="section-title">💡 <span>Pro Tips to Beat the House</span></h2>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <h4>📊 Read the Wagering Requirements</h4>
+        <p>Look for 35x or lower. Anything above 50x is usually not worth it. Calculate: Bonus × Wagering = Total you need to bet.</p>
+        <div class="warning">⚠️ Example: $100 bonus × 40x = $4,000 total bets required</div>
+      </div>
+      <div class="tip-card">
+        <h4>🎯 Choose High RTP Games</h4>
+        <p>Play slots with 96%+ RTP during wagering. Blackjack (99.5% RTP) often doesn't count toward requirements.</p>
+        <div class="warning">⚠️ Check game contribution % in T&Cs</div>
+      </div>
+      <div class="tip-card">
+        <h4>💰 Manage Your Bankroll</h4>
+        <p>Set a budget and stick to it. Never chase losses. Use 1-2% of bankroll per bet for slots.</p>
+        <div class="warning">⚠️ Gambling should be entertainment, not income</div>
+      </div>
+      <div class="tip-card">
+        <h4>📅 Time Your Deposits</h4>
+        <p>Many casinos offer reload bonuses on weekends. Check promotions calendar before depositing.</p>
+        <div class="warning">⚠️ Some bonuses are opt-in only - check before deposit</div>
+      </div>
+      <div class="tip-card">
+        <h4>🔄 Use Cashback Wisely</h4>
+        <p>Weekly cashback is essentially free money. Even if you lose, you get 10-15% back.</p>
+        <div class="warning">⚠️ Cashback often has 1x wagering - much better than bonuses</div>
+      </div>
+      <div class="tip-card">
+        <h4>✅ Verify Before Withdrawal</h4>
+        <p>Complete KYC verification early. Submit ID, address proof before your first withdrawal request.</p>
+        <div class="warning">⚠️ Withdrawals can be delayed 24-72h for verification</div>
+      </div>
+    </div>
+  </section>
 
-<div class="section">
-<h3>⚠️ 5 Errores Comunes de Principiantes</h3>
-<div class="pitfall">
-<h4>❌ Error 1: Solo mirar el porcentaje del bono</h4>
-<p>200% de bono pero requisito 50x = casi imposible retirar</p>
-</div>
-<div class="pitfall">
-<h4>❌ Error 2: Elegir plataformas sin licencia</h4>
-<p>Ganas pero no puedes retirar, sin recurso</p>
-</div>
-<div class="pitfall">
-<h4>❌ Error 3: No revisar depósito mínimo</h4>
-<p>El bono requiere 10000, solo tenías 1000</p>
-</div>
-<div class="pitfall">
-<h4>❌ Error 4: Ignorar verificación de retiro</h4>
-<p>Te piden documentos al retirar, pierde tiempo</p>
-</div>
-<div class="pitfall">
-<h4>❌ Error 5: Perder el bono de primer depósito</h4>
-<p>Depositas antes de registrarte, pierdes el bono</p>
-</div>
-</div>
+  <!-- Trust Badges -->
+  <section class="trust">
+    <h2 style="color: #ffd700; margin-bottom: 10px;">🔍 We Only List Verified & Safe Casinos</h2>
+    <p style="color: #888; margin-bottom: 30px;">Every casino on our list passes strict security checks</p>
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-icon">📜</div>
+        <span>Valid License</span>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🔒</div>
+        <span>SSL Encryption</span>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">✅</div>
+        <span>Tested by Us</span>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">💳</div>
+        <span>Secure Payments</span>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🎲</div>
+        <span>Provably Fair</span>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">💬</div>
+        <span>24/7 Support</span>
+      </div>
+    </div>
+  </section>
 
-<div class="section">
-<h3>🎁 ¿Por qué elegir mx711?</h3>
-<div class="benefit"><div class="icon">✓</div><p><strong>Licencia oficial de Curaçao</strong> - OGL/2024/1670/1153</p></div>
-<div class="benefit"><div class="icon">✓</div><p><strong>Bono de acceso $2,777</strong> - Exclusivo nuevos usuarios</p></div>
-<div class="benefit"><div class="icon">✓</div><p><strong>Bono de referido $137/persona</strong> - Invita y gana</p></div>
-<div class="benefit"><div class="icon">✓</div><p><strong>Premios 24 horas</strong> - Decenas de juegos con premios</p></div>
-<div class="benefit"><div class="icon">✓</div><p><strong>Soporte en línea 24/7</strong> - Siempre disponible</p></div>
-<div class="benefit"><div class="icon">✓</div><p><strong>Múltiples métodos de pago</strong> - Seguro y conveniente</p></div>
-</div>
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <h2>Ready to <span>Start Winning</span>?</h2>
+    <p>Choose your bonus, follow our guide, and maximize your chances. Good luck! 🍀</p>
+    <div class="cta-buttons">
+      <a href="#" class="cta-btn cta-btn-primary">🎁 Claim $500 Bonus Now</a>
+      <a href="#" class="cta-btn cta-btn-secondary">📖 View All Bonuses</a>
+    </div>
+  </section>
 
-<div class="countdown">
-<div>⏰ Cuenta regresiva de bono limitado</div>
-<div class="timer" id="timer">06:23:45</div>
-<div class="quota">🎁 Cupos restantes: <span id="quota">37</span> / 100</div>
-</div>
+  <!-- Footer -->
+  <footer>
+    <div class="disclaimer">
+      <strong>⚠️ IMPORTANT DISCLAIMER:</strong><br>
+      This is an independent bonus guide website. We are not affiliated with any casino. We receive compensation from casinos when players sign up through our links. Always read full T&Cs on casino websites. Gambling involves risk - only bet what you can afford to lose. Must be 18+ to gamble.
+    </div>
+    <div class="age-restriction">18+ ONLY</div>
+    <div class="footer-bottom">
+      <p>© 2026 mx711 Guide. All rights reserved.</p>
+      <p style="margin-top: 10px; font-size: 12px; color: #888;">
+        This is a demo landing page for client presentation. Not a real gambling site.
+      </p>
+    </div>
+  </footer>
 
-<div class="section">
-<h3>💬 Comentarios de Usuarios</h3>
-<div class="testimonial">
-<p>"Después de registrarme deposité 1000, el bono de 1200 llegó de inmediato, completé el requisito y retiré sin problemas"</p>
-<div class="author"><span class="stars">⭐⭐⭐⭐⭐</span> - User***123, 20 de marzo</div>
-</div>
-<div class="testimonial">
-<p>"Comparé varias plataformas, esta tiene el requisito más bajo, ideal para principiantes"</p>
-<div class="author"><span class="stars">⭐⭐⭐⭐⭐</span> - John***456, 19 de marzo</div>
-</div>
-<div class="testimonial">
-<p>"Los 200 PHP de apuesta gratis son reales, si pierdes te devuelven el capital, sin pérdida"</p>
-<div class="author"><span class="stars">⭐⭐⭐⭐⭐</span> - Mike***789, 18 de marzo</div>
-</div>
-</div>
-
-<div class="section">
-<h3>❓ Preguntas Frecuentes</h3>
-<div class="faq">
-<h4>P: ¿Cuánto tiempo toma el registro?</h4>
-<p>R: 30 segundos para registrarte, 1 minuto para verificar</p>
-</div>
-<div class="faq">
-<h4>P: ¿Cuál es el depósito mínimo?</h4>
-<p>R: Mínimo 100 PHP para activar el bono</p>
-</div>
-<div class="faq">
-<h4>P: ¿Cómo reclamar el bono?</h4>
-<p>R: Se activa automáticamente en el primer depósito, sin código</p>
-</div>
-<div class="faq">
-<h4>P: ¿Es seguro?</h4>
-<p>R: Operador con licencia oficial, fondos en custodia de terceros</p>
-</div>
-<div class="faq">
-<h4>P: ¿Qué métodos de pago aceptan?</h4>
-<p>R: Transferencia bancaria, billeteras electrónicas, criptomonedas y más</p>
-</div>
-</div>
-
-<a href="https://mx711.com" class="cta">👉 Registrarse Ahora</a>
-<p class="cta-sub">Cupos limitados, primer llegado primer servido</p>
-
-<div class="footer">
-<p>⚠️ Juego Responsable</p>
-<p>• Solo mayores de 18 años • El juego tiene riesgos, juega responsablemente</p>
-<p>• No juegues con dinero prestado • Busca ayuda si sientes que pierdes el control</p>
-<div class="warning">Esta página solo proporciona información de referencia, no constituye asesoramiento de juego. Por favor cumple con las leyes locales.</div>
-<p style="margin-top:15px;opacity:0.7">© 2026 mx711 - Todos los Derechos Reservados</p>
-</div>
-
-<script>
-function updateTimer() {
-  const now = new Date();
-  const end = new Date();
-  end.setHours(23, 59, 59);
-  const diff = end - now;
-  if (diff > 0) {
-    const h = Math.floor(diff / 3600000);
-    const m = Math.floor((diff % 3600000) / 60000);
-    const s = Math.floor((diff % 60000) / 1000);
-    document.getElementById('timer').textContent = 
-      String(h).padStart(2,'0') + ':' + 
-      String(m).padStart(2,'0') + ':' + 
-      String(s).padStart(2,'0');
-  }
-}
-setInterval(updateTimer, 1000);
-updateTimer();
-
-let quota = 37;
-setInterval(() => {
-  if (quota > 12 && Math.random() > 0.7) {
-    quota--;
-    document.getElementById('quota').textContent = quota;
-  }
-}, 30000);
-</script>
-
+  <script>
+    // Track CTA clicks
+    document.querySelectorAll('.promo-cta, .cta-btn, .hero-cta').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const bonusType = btn.textContent.trim();
+        alert(`Tracking: User interested in "${bonusType}"\n\nIn production, this would redirect to the casino with your affiliate link.`);
+      });
+    });
+  </script>
 </body>
 </html>
