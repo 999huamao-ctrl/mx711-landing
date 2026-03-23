@@ -109,9 +109,9 @@
 </head>
 <body>
 <div class="lang-switch">
-  <button class="lang-btn active" onclick="switchLang('zh')">中文</button>
-  <button class="lang-btn" onclick="switchLang('es')">ES</button>
-  <button class="lang-btn" onclick="switchLang('en')">EN</button>
+  <button class="lang-btn active" data-lang="zh">中文</button>
+  <button class="lang-btn" data-lang="es">ES</button>
+  <button class="lang-btn" data-lang="en">EN</button>
 </div>
 <header>
   <div class="logo">mx<span>711</span></div>
@@ -178,7 +178,7 @@
   <div class="countdown-box">
     <div data-zh="⏰ 限时福利倒计时" data-es="⏰ Cuenta Regresiva de Bono" data-en="⏰ Limited Bonus Countdown">⏰ 限时福利倒计时</div>
     <div class="countdown-timer" id="timer">06:23:45</div>
-    <div class="countdown-quota" data-zh="🎁 剩余名额：<span id="quota">37</span> / 100" data-es="🎁 Cupos restantes: <span id="quota">37</span> / 100" data-en="🎁 Remaining slots: <span id="quota">37</span> / 100">🎁 剩余名额：<span id="quota">37</span> / 100</div>
+    <div class="countdown-quota">🎁 剩余名额：<span id="quota">37</span> / 100</div>
   </div>
 </section>
 <section class="testimonials">
@@ -254,22 +254,27 @@
 <script>
 let currentLang = 'zh';
 
+// 语言切换函数
 function switchLang(lang) {
   currentLang = lang;
   
   // 更新按钮状态
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.remove('active');
+    if (btn.getAttribute('data-lang') === lang) {
+      btn.classList.add('active');
+    }
   });
-  event.target.classList.add('active');
   
   // 更新页面内容
-  document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+  document.querySelectorAll('[data-zh], [data-es], [data-en]').forEach(el => {
     const content = el.getAttribute('data-' + lang);
-    if (content.includes('<')) {
-      el.innerHTML = content;
-    } else {
-      el.textContent = content;
+    if (content) {
+      if (content.includes('<')) {
+        el.innerHTML = content;
+      } else {
+        el.textContent = content;
+      }
     }
   });
   
@@ -282,11 +287,17 @@ function switchLang(lang) {
 
 // 页面加载时恢复语言偏好
 document.addEventListener('DOMContentLoaded', function() {
+  // 绑定按钮点击事件
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const lang = this.getAttribute('data-lang');
+      switchLang(lang);
+    });
+  });
+  
+  // 恢复保存的语言
   const savedLang = localStorage.getItem('mx711_lang') || 'zh';
-  const btn = document.querySelector('.lang-btn[onclick="switchLang(\\'' + savedLang + '\\')"]');
-  if (btn) {
-    btn.click();
-  }
+  switchLang(savedLang);
   
   // 启动倒计时
   updateTimer();
