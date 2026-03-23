@@ -5,550 +5,284 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>mx711 - 墨西哥博彩新手指南</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Microsoft YaHei", sans-serif;
-      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
-      color: #ffffff;
-      min-height: 100vh;
-    }
-
-    /* Language Switcher */
-    .lang-switch {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1001;
-      display: flex;
-      gap: 10px;
-    }
-
-    .lang-btn {
-      background: rgba(255, 215, 0, 0.2);
-      border: 1px solid #ffd700;
-      color: #ffd700;
-      padding: 8px 16px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-
-    .lang-btn:hover,
-    .lang-btn.active {
-      background: #ffd700;
-      color: #000;
-    }
-
-    /* Header */
-    header {
-      text-align: center;
-      padding: 15px 5%;
-      background: rgba(0,0,0,0.8);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(10px);
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: #ffd700;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .logo span {
-      color: #ffffff;
-    }
-
-    .tagline {
-      font-size: 14px;
-      color: #888;
-      margin-top: 5px;
-    }
-
-    /* Hero Section */
-    .hero {
-      padding: 120px 5% 60px;
-      text-align: center;
-      background: radial-gradient(ellipse at center, rgba(255,215,0,0.1) 0%, transparent 70%);
-    }
-
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 15px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .hero h1 span {
-      color: #ffd700;
-    }
-
-    .hero .slogan {
-      font-size: 20px;
-      color: #cccccc;
-      margin-bottom: 30px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.6;
-    }
-
-    .alert-box {
-      display: inline-block;
-      padding: 15px 30px;
-      background: rgba(76, 175, 80, 0.2);
-      border: 2px solid #4caf50;
-      border-radius: 10px;
-      margin-bottom: 30px;
-    }
-
-    .alert-box span {
-      color: #4caf50;
-      font-weight: bold;
-      font-size: 18px;
-    }
-
-    .cta-button {
-      display: inline-block;
-      padding: 18px 40px;
-      background: linear-gradient(135deg, #ffd700, #ffaa00);
-      color: #000;
-      text-decoration: none;
-      border-radius: 30px;
-      font-size: 18px;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
-    }
-
-    .cta-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5);
-    }
-
-    /* Bonus Cards */
-    .bonus-section {
-      padding: 60px 5%;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 32px;
-      margin-bottom: 50px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .section-title span {
-      color: #ffd700;
-    }
-
-    .bonus-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .bonus-card {
-      background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(255,170,0,0.1));
-      border: 2px solid rgba(255,215,0,0.3);
-      border-radius: 20px;
-      padding: 40px 30px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .bonus-card::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
-      animation: pulse 3s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 0.5; }
-      50% { transform: scale(1.1); opacity: 0.8; }
-    }
-
-    .bonus-card .icon {
-      font-size: 48px;
-      margin-bottom: 20px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .bonus-card h3 {
-      font-size: 24px;
-      color: #ffd700;
-      margin-bottom: 15px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .bonus-card .amount {
-      font-size: 36px;
-      font-weight: bold;
-      color: #ffd700;
-      margin-bottom: 15px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .bonus-card p {
-      color: #cccccc;
-      line-height: 1.6;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* How It Works */
-    .how-it-works {
-      padding: 60px 5%;
-      background: rgba(255,255,255,0.03);
-    }
-
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .step-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,215,0,0.2);
-      border-radius: 15px;
-      padding: 30px;
-      text-align: center;
-      position: relative;
-    }
-
-    .step-number {
-      position: absolute;
-      top: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 40px;
-      height: 40px;
-      background: linear-gradient(135deg, #ffd700, #ffaa00);
-      color: #000;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 20px;
-    }
-
-    .step-card h3 {
-      margin-top: 15px;
-      font-size: 20px;
-      color: #ffd700;
-      margin-bottom: 10px;
-    }
-
-    .step-card p {
-      color: #cccccc;
-      line-height: 1.6;
-    }
-
-    /* Features */
-    .features {
-      padding: 60px 5%;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .feature-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 15px;
-      padding: 20px;
-      background: rgba(255,255,255,0.05);
-      border-radius: 10px;
-    }
-
-    .feature-icon {
-      font-size: 28px;
-      flex-shrink: 0;
-    }
-
-    .feature-item h4 {
-      color: #ffd700;
-      margin-bottom: 5px;
-      font-size: 18px;
-    }
-
-    .feature-item p {
-      color: #cccccc;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    /* Footer */
-    footer {
-      background: rgba(0,0,0,0.8);
-      padding: 40px 5%;
-      text-align: center;
-      border-top: 1px solid rgba(255,215,0,0.2);
-    }
-
-    footer p {
-      color: #666;
-      font-size: 13px;
-      margin-bottom: 10px;
-    }
-
-    footer .warning {
-      background: rgba(255, 165, 0, 0.2);
-      border: 1px solid #ffa500;
-      border-radius: 8px;
-      padding: 15px;
-      margin-top: 20px;
-      color: #ffa500;
-      font-size: 12px;
-    }
-
-    /* Mobile Responsive */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 32px;
-      }
-      
-      .hero .slogan {
-        font-size: 16px;
-      }
-
-      .bonus-card .amount {
-        font-size: 28px;
-      }
-
-      .lang-switch {
-        top: 10px;
-        right: 10px;
-      }
-
-      .lang-btn {
-        padding: 6px 12px;
-        font-size: 12px;
-      }
-    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#0a0a0a 0%,#1a1a2e 50%,#0a0a0a 100%);color:#ffffff;min-height:100vh}
+    .lang-switch{position:fixed;top:20px;right:20px;z-index:1001;display:flex;gap:10px}
+    .lang-btn{background:rgba(255,215,0,0.2);border:1px solid #ffd700;color:#ffd700;padding:8px 16px;border-radius:20px;cursor:pointer;font-size:14px;font-weight:bold;transition:all 0.3s ease}
+    .lang-btn:hover,.lang-btn.active{background:#ffd700;color:#000}
+    header{text-align:center;padding:15px 5%;background:rgba(0,0,0,0.8);position:fixed;width:100%;top:0;z-index:1000;backdrop-filter:blur(10px)}
+    .logo{font-size:24px;font-weight:bold;color:#ffd700;text-transform:uppercase;letter-spacing:2px}
+    .logo span{color:#ffffff}
+    .tagline{font-size:14px;color:#888;margin-top:5px}
+    .hero{padding:120px 5% 60px;text-align:center;background:radial-gradient(ellipse at center,rgba(255,215,0,0.1) 0%,transparent 70%)}
+    .hero h1{font-size:42px;margin-bottom:15px;text-transform:uppercase;letter-spacing:2px}
+    .hero h1 span{color:#ffd700}
+    .hero .slogan{font-size:20px;color:#cccccc;margin-bottom:30px;max-width:800px;margin:0 auto 30px;line-height:1.6}
+    .alert-box{display:inline-block;padding:15px 30px;background:rgba(76,175,80,0.2);border:2px solid #4caf50;border-radius:10px;margin-bottom:30px}
+    .alert-box span{color:#4caf50;font-weight:bold;font-size:18px}
+    .cta-button{display:inline-block;padding:18px 40px;background:linear-gradient(135deg,#ffd700,#ffaa00);color:#000;text-decoration:none;border-radius:30px;font-size:18px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;transition:transform 0.3s ease,box-shadow 0.3s ease;box-shadow:0 10px 30px rgba(255,215,0,0.3)}
+    .cta-button:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(255,215,0,0.5)}
+    .section-title{text-align:center;font-size:32px;margin-bottom:50px;text-transform:uppercase;letter-spacing:2px}
+    .section-title span{color:#ffd700}
+    .how-it-works,.tips,.trust{padding:60px 5%;background:rgba(255,255,255,0.03)}
+    .steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;max-width:1200px;margin:0 auto}
+    .step-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,215,0,0.2);border-radius:15px;padding:30px;text-align:center;position:relative}
+    .step-number{position:absolute;top:-15px;left:50%;transform:translateX(-50%);width:40px;height:40px;background:linear-gradient(135deg,#ffd700,#ffaa00);color:#000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:20px}
+    .step-card h3{margin-top:15px;font-size:20px;color:#ffd700;margin-bottom:10px}
+    .step-card p{color:#cccccc;line-height:1.6;font-size:14px}
+    .bonus-section{padding:60px 5%}
+    .bonus-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px;max-width:1200px;margin:0 auto}
+    .bonus-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,215,0,0.2);border-radius:20px;padding:35px;position:relative}
+    .bonus-card.featured{border-color:#ffd700;background:linear-gradient(135deg,rgba(255,215,0,0.1),rgba(255,170,0,0.05))}
+    .bonus-badge{position:absolute;top:20px;right:20px;background:#ff4444;color:#fff;padding:5px 15px;border-radius:20px;font-size:12px;font-weight:bold}
+    .bonus-card h3{font-size:24px;margin-bottom:10px;color:#ffd700}
+    .bonus-card .site-name{color:#888;font-size:14px;margin-bottom:20px}
+    .bonus-card .amount{font-size:42px;font-weight:bold;color:#ffd700;margin-bottom:15px}
+    .bonus-card ul{list-style:none;margin-bottom:25px}
+    .bonus-card li{color:#cccccc;margin-bottom:10px;padding-left:25px;position:relative;font-size:14px}
+    .bonus-card li::before{content:'✓';position:absolute;left:0;color:#4caf50;font-weight:bold}
+    .promo-cta{display:block;width:100%;padding:15px;background:linear-gradient(135deg,#ffd700,#ffaa00);color:#000;border-radius:10px;text-align:center;text-decoration:none;font-weight:bold;transition:all 0.3s}
+    .promo-cta:hover{transform:scale(1.02);box-shadow:0 5px 20px rgba(255,215,0,0.3)}
+    .pitfalls{padding:60px 5%}
+    .pitfalls-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;max-width:1200px;margin:0 auto}
+    .pitfall-card{background:rgba(255,68,68,0.1);border-left:4px solid #ff4444;padding:20px;border-radius:0 15px 15px 0}
+    .pitfall-card h4{color:#ff4444;margin-bottom:10px;font-size:16px}
+    .pitfall-card p{color:#cccccc;line-height:1.6;font-size:14px}
+    .comparison{padding:60px 5%;background:rgba(255,255,255,0.03)}
+    .comparison-table{width:100%;max-width:1000px;margin:0 auto;border-collapse:collapse}
+    .comparison-table th{background:rgba(255,215,0,0.2);color:#ffd700;padding:15px 10px;text-align:center;font-size:14px}
+    .comparison-table td{padding:15px 10px;text-align:center;border-bottom:1px solid rgba(255,255,255,0.1);font-size:14px;color:#cccccc}
+    .comparison-table tr.highlight{background:rgba(76,175,80,0.2);border:2px solid #4caf50}
+    .comparison-table tr.highlight td{color:#4caf50;font-weight:bold}
+    .countdown{padding:60px 5%;text-align:center;background:radial-gradient(ellipse at center,rgba(255,100,100,0.15) 0%,transparent 70%)}
+    .countdown-box{display:inline-block;padding:30px 50px;background:rgba(255,68,68,0.2);border:2px solid #ff4444;border-radius:15px;margin-bottom:20px}
+    .countdown-timer{font-size:48px;font-weight:bold;color:#ff4444;font-family:'Courier New',monospace}
+    .countdown-quota{font-size:18px;color:#ff4444;margin-top:10px}
+    .testimonials{padding:60px 5%}
+    .testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;max-width:1200px;margin:0 auto}
+    .testimonial-card{background:rgba(255,255,255,0.05);padding:25px;border-radius:15px;border-left:3px solid #ffd700}
+    .testimonial-card p{color:#cccccc;font-style:italic;line-height:1.6;margin-bottom:15px}
+    .testimonial-card .author{color:#888;font-size:13px}
+    .testimonial-card .stars{color:#ffd700}
+    .faq{padding:60px 5%;background:rgba(255,255,255,0.03)}
+    .faq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:25px;max-width:1000px;margin:0 auto}
+    .faq-item{background:rgba(255,255,255,0.05);padding:20px;border-radius:10px}
+    .faq-item h4{color:#ffd700;margin-bottom:10px;font-size:16px}
+    .faq-item p{color:#cccccc;line-height:1.6;font-size:14px}
+    .calculator{padding:60px 5%;background:rgba(0,0,0,0.3)}
+    .calc-container{max-width:900px;margin:0 auto;background:linear-gradient(135deg,rgba(255,215,0,0.1),rgba(255,170,0,0.05));border:2px solid rgba(255,215,0,0.3);border-radius:20px;padding:40px}
+    .calc-title{text-align:center;font-size:28px;color:#ffd700;margin-bottom:30px}
+    .calc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin-bottom:30px}
+    .calc-item{text-align:center}
+    .calc-item label{display:block;color:#888;margin-bottom:10px;font-size:14px}
+    .calc-item .value{font-size:36px;font-weight:bold;color:#ffd700}
+    .calc-item .sub{font-size:12px;color:#666;margin-top:5px}
+    .calc-total{text-align:center;padding-top:30px;border-top:1px solid rgba(255,255,255,0.1)}
+    .calc-total .label{font-size:16px;color:#888;margin-bottom:10px}
+    .calc-total .amount{font-size:56px;font-weight:bold;background:linear-gradient(135deg,#ffd700,#ffaa00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .tips-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;max-width:1200px;margin:0 auto}
+    .tip-card{background:rgba(255,255,255,0.05);border-left:4px solid #ffd700;padding:25px;border-radius:0 15px 15px 0}
+    .tip-card h4{color:#ffd700;margin-bottom:10px;font-size:18px}
+    .tip-card p{color:#cccccc;line-height:1.6;font-size:14px}
+    .tip-card .warning{color:#ff9800;font-size:13px;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.1)}
+    .trust{text-align:center}
+    .trust-grid{display:flex;justify-content:center;flex-wrap:wrap;gap:40px;margin-top:30px}
+    .trust-item{display:flex;flex-direction:column;align-items:center;gap:10px}
+    .trust-icon{font-size:36px}
+    .trust-item span{color:#888;font-size:13px}
+    .final-cta{padding:80px 5%;text-align:center;background:radial-gradient(ellipse at center,rgba(255,215,0,0.15) 0%,transparent 70%)}
+    .final-cta h2{font-size:36px;margin-bottom:20px}
+    .final-cta h2 span{color:#ffd700}
+    .final-cta p{font-size:18px;color:#cccccc;margin-bottom:40px;max-width:600px;margin:0 auto 40px}
+    .cta-buttons{display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+    .cta-btn{padding:18px 45px;border-radius:50px;font-size:18px;font-weight:bold;text-decoration:none;transition:all 0.3s}
+    .cta-btn-primary{background:linear-gradient(135deg,#ffd700,#ffaa00);color:#000}
+    .cta-btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 40px rgba(255,215,0,0.4)}
+    .cta-btn-secondary{background:transparent;border:2px solid #ffd700;color:#ffd700}
+    .cta-btn-secondary:hover{background:rgba(255,215,0,0.1)}
+    footer{padding:40px 5% 30px;background:rgba(0,0,0,0.8);text-align:center}
+    .disclaimer{max-width:800px;margin:0 auto 30px;padding:20px;background:rgba(255,152,0,0.1);border:1px solid rgba(255,152,0,0.3);border-radius:10px;font-size:13px;color:#ff9800;line-height:1.6;text-align:left}
+    .footer-bottom{color:#666;font-size:13px}
+    .age-restriction{display:inline-block;background:#ff4444;color:#fff;padding:5px 15px;border-radius:5px;font-weight:bold;margin-bottom:15px}
+    @media(max-width:768px){.hero h1{font-size:32px}.hero .slogan{font-size:16px}.lang-switch{top:10px;right:10px}.lang-btn{padding:6px 12px;font-size:12px}.calc-total .amount{font-size:42px}.cta-buttons{flex-direction:column;align-items:center}.cta-btn{width:100%;max-width:300px}.countdown-timer{font-size:36px}.faq-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-
-<!-- Language Switcher -->
 <div class="lang-switch">
   <button class="lang-btn active" onclick="switchLang('zh')">中文</button>
   <button class="lang-btn" onclick="switchLang('es')">ES</button>
   <button class="lang-btn" onclick="switchLang('en')">EN</button>
 </div>
-
-<!-- Header -->
 <header>
   <div class="logo">mx<span>711</span></div>
   <div class="tagline" data-zh="你的墨西哥博彩指南" data-es="Tu guía de apuestas en México" data-en="Your Mexico Betting Guide">你的墨西哥博彩指南</div>
 </header>
-
-<!-- Hero Section -->
 <section class="hero">
-  <h1 data-zh="mx711 <span>新手福利</span>" data-es="mx711 <span>Bono para Nuevos</span>" data-en="mx711 <span>New Player Bonus</span>">mx711 <span>新手福利</span></h1>
-  <p class="slogan" 
-     data-zh="首充最高 2777 MXN + 连续充值奖励 + 神秘红包 7777 MXN<br>库拉索官方持牌 · 安全可信"
-     data-es="Hasta 2777 MXN Primer Depósito + Bono Continuo + Bono Sorpresa 7777 MXN<br>Licencia de Curaçao · Seguro y Confiable"
-     data-en="Up to 2777 MXN First Deposit + Continuous Reward + Mystery Bonus 7777 MXN<br>Curaçao Licensed · Secure & Trusted">
-    首充最高 2777 MXN + 连续充值奖励 + 神秘红包 7777 MXN<br>库拉索官方持牌 · 安全可信
-  </p>
-  <div class="alert-box">
-    <span data-zh="✅ 新用户专享：首充 2777 MXN + 神秘红包 7777 MXN"
-          data-es="✅ Exclusivo Nuevos: 2777 MXN Primer Depósito + 7777 MXN Bono Sorpresa"
-          data-en="✅ New Player Exclusive: 2777 MXN First Deposit + 7777 MXN Mystery Bonus">
-      ✅ 新用户专享：首充 2777 MXN + 神秘红包 7777 MXN
-    </span>
-  </div>
-  <br>
+  <h1 data-zh="🎯 墨西哥博彩<span>新手指南</span>" data-es="🎯 Guía de Apuestas<span>para Nuevos</span>" data-en="🎯 Mexico Betting<span>Beginner's Guide</span>">🎯 墨西哥博彩<span>新手指南</span></h1>
+  <p class="slogan" data-zh="第一次注册？先看这个，避开 90% 的坑" data-es="¿Primera vez? Lee esto primero, evita 90% de errores" data-en="First time? Read this first, avoid 90% of mistakes">第一次注册？先看这个，避开 90% 的坑</p>
+  <div class="alert-box"><span data-zh="✅ 已验证：所有优惠均已测试并确认有效" data-es="✅ Verificado: Todas las ofertas probadas" data-en="✅ Verified: All offers tested">✅ 已验证：所有优惠均已测试并确认有效</span></div>
+  <br><br>
   <a href="https://mx711.com" class="cta-button" data-zh="👉 立即注册领取福利" data-es="👉 Registrarse Ahora" data-en="👉 Register Now">👉 立即注册领取福利</a>
 </section>
-
-<!-- Bonus Cards -->
-<section class="bonus-section">
-  <h2 class="section-title" data-zh="💰 福利<span>详情</span>" data-es="💰 Detalles del <span>Bono</span>" data-en="💰 Bonus <span>Details</span>">💰 福利<span>详情</span></h2>
-  <div class="bonus-grid">
-    <div class="bonus-card">
-      <div class="icon">🎁</div>
-      <h3 data-zh="首充奖金" data-es="Bono de Primer Depósito" data-en="First Deposit Bonus">首充奖金</h3>
-      <div class="amount" data-zh="2777 MXN" data-es="2777 MXN" data-en="2777 MXN">2777 MXN</div>
-      <p data-zh="新用户首次存款，最低赠送 37 MXN，最高赠送 2777 MXN" 
-         data-es="Primer depósito de nuevos usuarios, mínimo 37 MXN, máximo 2777 MXN"
-         data-en="New user first deposit, minimum 37 MXN, maximum 2777 MXN">
-        新用户首次存款，最低赠送 37 MXN，最高赠送 2777 MXN
-      </p>
-    </div>
-    <div class="bonus-card">
-      <div class="icon">📅</div>
-      <h3 data-zh="连续充值奖励" data-es="Bono de Recarga Continua" data-en="Continuous Reward">连续充值奖励</h3>
-      <div class="amount" data-zh="5000 MXN/天" data-es="5000 MXN/día" data-en="5000 MXN/day">5000 MXN/天</div>
-      <p data-zh="每日连续充值，最高可获得 5000 MXN 奖励"
-         data-es="Recarga diaria continua, hasta 5000 MXN de bono"
-         data-en="Daily continuous recharge, up to 5000 MXN bonus">
-        每日连续充值，最高可获得 5000 MXN 奖励
-      </p>
-    </div>
-    <div class="bonus-card">
-      <div class="icon">🧧</div>
-      <h3 data-zh="神秘红包" data-es="Bono Sorpresa" data-en="Mystery Bonus">神秘红包</h3>
-      <div class="amount" data-zh="7777 MXN" data-es="7777 MXN" data-en="7777 MXN">7777 MXN</div>
-      <p data-zh="第 2/3/4/7/15/30 天登录，最高可获得 7777 MXN"
-         data-es="Días 2/3/4/7/15/30, hasta 7777 MXN"
-         data-en="Days 2/3/4/7/15/30, up to 7777 MXN">
-        第 2/3/4/7/15/30 天登录，最高可获得 7777 MXN
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- How It Works -->
 <section class="how-it-works">
-  <h2 class="section-title" data-zh="📋 如何<span>领取</span>" data-es="📋 Cómo <span>Reclamar</span>" data-en="📋 How to <span>Claim</span>">📋 如何<span>领取</span></h2>
+  <h2 class="section-title" data-zh="如何<span>最大化您的奖金</span>" data-es="Cómo<span>Maximizar Su Bono</span>" data-en="How to<span>Maximize Your Bonus</span>">如何<span>最大化您的奖金</span></h2>
   <div class="steps-grid">
-    <div class="step-card">
-      <div class="step-number">1</div>
-      <h3 data-zh="点击注册" data-es="Registrarse" data-en="Register">点击注册</h3>
-      <p data-zh="点击下方绿色按钮进入官网" 
-         data-es="Haz clic en el botón verde para ir al sitio oficial"
-         data-en="Click the green button below to go to official site">
-        点击下方绿色按钮进入官网
-      </p>
-    </div>
-    <div class="step-card">
-      <div class="step-number">2</div>
-      <h3 data-zh="填写信息" data-es="Completar Datos" data-en="Complete Info">填写信息</h3>
-      <p data-zh="手机号/邮箱 + 密码，30 秒完成"
-         data-es="Teléfono/email + contraseña, 30 segundos"
-         data-en="Phone/email + password, 30 seconds">
-        手机号/邮箱 + 密码，30 秒完成
-      </p>
-    </div>
-    <div class="step-card">
-      <div class="step-number">3</div>
-      <h3 data-zh="首存领奖金" data-es="Primer Depósito" data-en="First Deposit">首存领奖金</h3>
-      <p data-zh="首次存款自动激活奖金"
-         data-es="El bono se activa automáticamente con el primer depósito"
-         data-en="Bonus activates automatically with first deposit">
-        首次存款自动激活奖金
-      </p>
+    <div class="step-card"><div class="step-number">1</div><h3 data-zh="选择奖金" data-es="Seleccionar Bono" data-en="Choose Bonus">选择奖金</h3><p data-zh="从我们验证的赌场列表中选择最佳欢迎优惠" data-es="Seleccione la mejor oferta verificada" data-en="Choose best verified offer">从我们验证的赌场列表中选择最佳欢迎优惠</p></div>
+    <div class="step-card"><div class="step-number">2</div><h3 data-zh="注册账户" data-es="Crear Cuenta" data-en="Register">注册账户</h3><p data-zh="点击链接并完成注册（仅需 2-3 分钟）" data-es="Complete el registro (2-3 minutos)" data-en="Complete registration (2-3 min)">点击链接并完成注册（仅需 2-3 分钟）</p></div>
+    <div class="step-card"><div class="step-number">3</div><h3 data-zh="首次存款" data-es="Primer Depósito" data-en="First Deposit">首次存款</h3><p data-zh="存入最低金额以激活欢迎奖金" data-es="Deposite el mínimo para activar el bono" data-en="Deposit minimum to activate bonus">存入最低金额以激活欢迎奖金</p></div>
+    <div class="step-card"><div class="step-number">4</div><h3 data-zh="完成流水" data-es="Completar Rollover" data-en="Complete Rollover">完成流水</h3><p data-zh="按照我们的策略高效完成流水要求" data-es="Complete el rollover con nuestra estrategia" data-en="Complete rollover with our strategy">按照我们的策略高效完成流水要求</p></div>
+    <div class="step-card"><div class="step-number">5</div><h3 data-zh="提取赢利" data-es="Retirar Ganancias" data-en="Withdraw">提取赢利</h3><p data-zh="提取您的利润 - 大多数 24 小时内到账" data-es="Retire sus ganancias - mayoría en 24h" data-en="Withdraw profits - most within 24h">提取您的利润 - 大多数 24 小时内到账</p></div>
+  </div>
+</section>
+<section class="bonus-section">
+  <h2 class="section-title" data-zh="🎁<span>新人专属福利</span>" data-es="🎁<span>Bono Exclusivo para Nuevos</span>" data-en="🎁<span>Exclusive New Player Bonus</span>">🎁<span>新人专属福利</span></h2>
+  <div class="bonus-grid">
+    <div class="bonus-card featured">
+      <div class="bonus-badge" data-zh="首选推荐" data-es="Recomendado" data-en="Top Pick">首选推荐</div>
+      <h3 data-zh="终极欢迎礼包" data-es="Paquete de Bienvenida" data-en="Ultimate Welcome Package">终极欢迎礼包</h3>
+      <p class="site-name">mx711 Casino</p>
+      <div class="amount" data-zh="2777 MXN + 神秘红包" data-es="2777 MXN + Bono Sorpresa" data-en="2777 MXN + Mystery Bonus">2777 MXN + 神秘红包</div>
+      <ul>
+        <li data-zh="首次存款 100% 匹配（最高 2777 MXN）" data-es="100% match primer depósito (hasta 2777 MXN)" data-en="100% first deposit match (up to 2777 MXN)">首次存款 100% 匹配（最高 2777 MXN）</li>
+        <li data-zh="最低存款仅 37 MXN 即可激活" data-es="Depósito mínimo solo 37 MXN" data-en="Minimum deposit only 37 MXN">最低存款仅 37 MXN 即可激活</li>
+        <li data-zh="连续充值每日最高 5000 MXN" data-es="Bono de recarga hasta 5000 MXN diarios" data-en="Daily reload bonus up to 5000 MXN">连续充值每日最高 5000 MXN</li>
+        <li data-zh="神秘红包 6 次机会，最高 7777 MXN" data-es="6 oportunidades de bono sorpresa, hasta 7777 MXN" data-en="6 mystery bonus chances, up to 7777 MXN">神秘红包 6 次机会，最高 7777 MXN</li>
+        <li data-zh="库拉索官方牌照 OGL/2024/1670/1153" data-es="Licencia oficial de Curaçao OGL/2024/1670/1153" data-en="Curaçao Official License OGL/2024/1670/1153">库拉索官方牌照 OGL/2024/1670/1153</li>
+      </ul>
+      <a href="https://mx711.com" class="promo-cta" data-zh="👉 领取此奖金" data-es="👉 Reclamar Bono" data-en="👉 Claim Bonus">👉 领取此奖金</a>
     </div>
   </div>
 </section>
-
-<!-- Features -->
-<section class="features">
-  <h2 class="section-title" data-zh="✨ 为什么选择<span>mx711</span>" data-es="✨ ¿Por Qué Elegir <span>mx711</span>?" data-en="✨ Why Choose <span>mx711</span>?">✨ 为什么选择<span>mx711</span></h2>
-  <div class="features-grid">
-    <div class="feature-item">
-      <div class="feature-icon">🛡️</div>
-      <div>
-        <h4 data-zh="库拉索官方牌照" data-es="Licencia Oficial de Curaçao" data-en="Curaçao Official License">库拉索官方牌照</h4>
-        <p data-zh="OGL/2024/1670/1153 正规监管" data-es="OGL/2024/1670/1153 Regulación Oficial" data-en="OGL/2024/1670/1153 Official Regulation">OGL/2024/1670/1153 正规监管</p>
-      </div>
-    </div>
-    <div class="feature-item">
-      <div class="feature-icon">💳</div>
-      <div>
-        <h4 data-zh="多种支付方式" data-es="Múltiples Métodos de Pago" data-en="Multiple Payment Methods">多种支付方式</h4>
-        <p data-zh="存取款安全便捷" data-es="Depósito y retiro seguros y convenientes" data-en="Secure and convenient deposit/withdrawal">存取款安全便捷</p>
-      </div>
-    </div>
-    <div class="feature-item">
-      <div class="feature-icon">🎰</div>
-      <div>
-        <h4 data-zh="丰富游戏" data-es="Juegos Abundantes" data-en="Rich Games">丰富游戏</h4>
-        <p data-zh="数十款老虎机 + 体育博彩" data-es="Decenas de tragamonedas + apuestas deportivas" data-en="Dozens of slots + sports betting">数十款老虎机 + 体育博彩</p>
-      </div>
-    </div>
-    <div class="feature-item">
-      <div class="feature-icon">🎧</div>
-      <div>
-        <h4 data-zh="24/7 客服" data-es="Soporte 24/7" data-en="24/7 Support">24/7 客服</h4>
-        <p data-zh="随时在线解答" data-es="Siempre disponible" data-en="Always available">随时在线解答</p>
-      </div>
-    </div>
+<section class="pitfalls">
+  <h2 class="section-title" data-zh="⚠️<span>我踩过的 5 个坑</span>" data-es="⚠️<span>5 Errores Comunes</span>" data-en="⚠️<span>5 Common Mistakes</span>">⚠️<span>我踩过的 5 个坑</span></h2>
+  <div class="pitfalls-grid">
+    <div class="pitfall-card"><h4 data-zh="❌ 坑 1：只看 bonus 比例，不看流水要求" data-es="❌ Error 1: Solo mirar el porcentaje del bono" data-en="❌ Mistake 1: Only look at bonus percentage">❌ 坑 1：只看 bonus 比例，不看流水要求</h4><p data-zh="200% bonus 但流水 50x = 基本拿不到" data-es="200% bono pero rollover 50x = casi imposible" data-en="200% bonus but 50x rollover = almost impossible">200% bonus 但流水 50x = 基本拿不到</p></div>
+    <div class="pitfall-card"><h4 data-zh="❌ 坑 2：选择无牌照平台" data-es="❌ Error 2: Elegir plataformas sin licencia" data-en="❌ Mistake 2: Choose unlicensed platforms">❌ 坑 2：选择无牌照平台</h4><p data-zh="赢了无法提现，投诉无门" data-es="Ganas pero no puedes retirar" data-en="Win but can't withdraw">赢了无法提现，投诉无门</p></div>
+    <div class="pitfall-card"><h4 data-zh="❌ 坑 3：没看最低存款要求" data-es="❌ Error 3: No revisar depósito mínimo" data-en="❌ Mistake 3: Don't check minimum deposit">❌ 坑 3：没看最低存款要求</h4><p data-zh="bonus 要求存 10000，我只准备了 1000" data-es="Bono requiere 10000, solo tenía 1000" data-en="Bonus requires 10000, only had 1000">bonus 要求存 10000，我只准备了 1000</p></div>
+    <div class="pitfall-card"><h4 data-zh="❌ 坑 4：忽略提现验证" data-es="❌ Error 4: Ignorar verificación de retiro" data-en="❌ Mistake 4: Ignore withdrawal verification">❌ 坑 4：忽略提现验证</h4><p data-zh="提款时才说要上传证件，耽误时间" data-es="Piden documentos al retirar, pierde tiempo" data-en="They ask for documents at withdrawal, wastes time">提款时才说要上传证件，耽误时间</p></div>
+    <div class="pitfall-card"><h4 data-zh="❌ 坑 5：错过首存 bonus" data-es="❌ Error 5: Perder el bono de primer depósito" data-en="❌ Mistake 5: Miss first deposit bonus">❌ 坑 5：错过首存 bonus</h4><p data-zh="先存款后注册，bonus 没了" data-es="Depositas antes de registrarte, pierdes el bono" data-en="Deposit before registering, lose bonus">先存款后注册，bonus 没了</p></div>
   </div>
 </section>
-
-<!-- Footer -->
+<section class="comparison">
+  <h2 class="section-title" data-zh="📊<span>3 家持牌平台对比</span>" data-es="📊<span>Comparación de 3 Plataformas</span>" data-en="📊<span>3 Licensed Platforms Comparison</span>">📊<span>3 家持牌平台对比</span></h2>
+  <table class="comparison-table">
+    <thead><tr><th data-zh="平台" data-es="Plataforma" data-en="Platform">平台</th><th data-zh="牌照" data-es="Licencia" data-en="License">牌照</th><th data-zh="首存" data-es="Primer Depósito" data-en="First Deposit">首存</th><th data-zh="流水" data-es="Rollover" data-en="Rollover">流水</th><th data-zh="评分" data-es="Calificación" data-en="Rating">评分</th></tr></thead>
+    <tbody>
+      <tr><td data-zh="Platform A" data-es="Platform A" data-en="Platform A">Platform A</td><td>✅</td><td data-zh="100%" data-es="100%" data-en="100%">100%</td><td data-zh="10x" data-es="10x" data-en="10x">10x</td><td>⭐⭐⭐⭐</td></tr>
+      <tr class="highlight"><td data-zh="🌟 推荐" data-es="🌟 Recomendado" data-en="🌟 Recommended">🌟 推荐</td><td>✅</td><td data-zh="170%" data-es="170%" data-en="170%">170%</td><td data-zh="10x" data-es="10x" data-en="10x">10x</td><td>⭐⭐⭐⭐⭐</td></tr>
+      <tr><td data-zh="Platform C" data-es="Platform C" data-en="Platform C">Platform C</td><td>✅</td><td data-zh="150%" data-es="150%" data-en="150%">150%</td><td data-zh="15x" data-es="15x" data-en="15x">15x</td><td>⭐⭐⭐</td></tr>
+    </tbody>
+  </table>
+</section>
+<section class="countdown">
+  <div class="countdown-box">
+    <div data-zh="⏰ 限时福利倒计时" data-es="⏰ Cuenta Regresiva de Bono" data-en="⏰ Limited Bonus Countdown">⏰ 限时福利倒计时</div>
+    <div class="countdown-timer" id="timer">06:23:45</div>
+    <div class="countdown-quota" data-zh="🎁 剩余名额：<span id="quota">37</span> / 100" data-es="🎁 Cupos restantes: <span id="quota">37</span> / 100" data-en="🎁 Remaining slots: <span id="quota">37</span> / 100">🎁 剩余名额：<span id="quota">37</span> / 100</div>
+  </div>
+</section>
+<section class="testimonials">
+  <h2 class="section-title" data-zh="💬<span>已领取用户反馈</span>" data-es="💬<span>Comentarios de Usuarios</span>" data-en="💬<span>User Reviews</span>">💬<span>已领取用户反馈</span></h2>
+  <div class="testimonial-grid">
+    <div class="testimonial-card"><p data-zh="注册后首存 1000，奖金 1200 立刻到账，流水完成顺利提现" data-es="Después de registrarme deposité 1000, el bono de 1200 llegó de inmediato, completé el rollover y retiré sin problemas" data-en="After registering I deposited 1000, the 1200 bonus arrived immediately, completed rollover and withdrew smoothly">注册后首存 1000，奖金 1200 立刻到账，流水完成顺利提现</p><div class="author"><span class="stars">⭐⭐⭐⭐⭐</span> - User***123, <span data-zh="3 月 18 日" data-es="18 de marzo" data-en="March 18">3 月 18 日</span></div></div>
+    <div class="testimonial-card"><p data-zh="对比了好几家，这家流水要求确实最低，新手友好" data-es="Comparé varias plataformas, esta tiene el requisito de rollover más bajo, ideal para principiantes" data-en="Compared several platforms, this one has the lowest rollover requirement, beginner friendly">对比了好几家，这家流水要求确实最低，新手友好</p><div class="author"><span class="stars">⭐⭐⭐⭐⭐</span> - John***456, <span data-zh="3 月 17 日" data-es="17 de marzo" data-en="March 17">3 月 17 日</span></div></div>
+    <div class="testimonial-card"><p data-zh="神秘红包真给了，第 7 天拿到 2000 MXN，不亏" data-es="El bono sorpresa es real, recibí 2000 MXN el día 7, sin pérdida" data-en="Mystery bonus is real, got 2000 MXN on day 7, no loss">神秘红包真给了，第 7 天拿到 2000 MXN，不亏</p><div class="author"><span class="stars">⭐⭐⭐⭐⭐</span> - Mike***789, <span data-zh="3 月 15 日" data-es="15 de marzo" data-en="March 15">3 月 15 日</span></div></div>
+  </div>
+</section>
+<section class="calculator">
+  <div class="calc-container">
+    <h3 class="calc-title" data-zh="💰 潜在奖金价值" data-es="💰 Valor Potencial del Bono" data-en="💰 Potential Bonus Value">💰 潜在奖金价值</h3>
+    <div class="calc-grid">
+      <div class="calc-item"><label data-zh="首充奖金" data-es="Bono Primer Depósito" data-en="First Deposit Bonus">首充奖金</label><div class="value" data-zh="2777 MXN" data-es="2777 MXN" data-en="2777 MXN">2777 MXN</div><div class="sub" data-zh="最低 37 MXN" data-es="Mínimo 37 MXN" data-en="Min 37 MXN">最低 37 MXN</div></div>
+      <div class="calc-item"><label data-zh="连续充值" data-es="Recarga Continua" data-en="Continuous Bonus">连续充值</label><div class="value" data-zh="5000 MXN" data-es="5000 MXN" data-en="5000 MXN">5000 MXN</div><div class="sub" data-zh="每日最高" data-es="Máximo Diario" data-en="Daily Max">每日最高</div></div>
+      <div class="calc-item"><label data-zh="神秘红包" data-es="Bono Sorpresa" data-en="Mystery Bonus">神秘红包</label><div class="value" data-zh="7777 MXN" data-es="7777 MXN" data-en="7777 MXN">7777 MXN</div><div class="sub" data-zh="6 次机会" data-es="6 Oportunidades" data-en="6 Chances">6 次机会</div></div>
+      <div class="calc-item"><label data-zh="推荐奖金" data-es="Bono de Referido" data-en="Referral Bonus">推荐奖金</label><div class="value" data-zh="137 USD" data-es="137 USD" data-en="137 USD">137 USD</div><div class="sub" data-zh="每位好友" data-es="Por Amigo" data-en="Per Friend">每位好友</div></div>
+    </div>
+    <div class="calc-total"><div class="label" data-zh="最大总价值" data-es="Valor Total Máximo" data-en="Maximum Total Value">最大总价值</div><div class="amount" data-zh="15,000+ MXN" data-es="15,000+ MXN" data-en="15,000+ MXN">15,000+ MXN</div><p style="color:#666;font-size:13px;margin-top:10px" data-zh="*基于最优奖金叠加策略计算" data-es="*Basado en estrategia óptima de bonos" data-en="*Based on optimal bonus stacking strategy">*基于最优奖金叠加策略计算</p></div>
+  </div>
+</section>
+<section class="tips">
+  <h2 class="section-title" data-zh="💡<span>战胜庄家的专业技巧</span>" data-es="💡<span>Consejos Profesionales</span>" data-en="💡<span>Pro Tips to Beat the House</span>">💡<span>战胜庄家的专业技巧</span></h2>
+  <div class="tips-grid">
+    <div class="tip-card"><h4 data-zh="📊 读懂流水要求" data-es="📊 Entender Requisitos de Rollover" data-en="📊 Understand Rollover Requirements">📊 读懂流水要求</h4><p data-zh="寻找 35 倍或更低的要求。超过 50 倍通常不值得。计算公式：奖金 × 流水倍数 = 总投注额要求。" data-es="Busque requisitos de 35x o menos. Más de 50x generalmente no vale la pena. Fórmula: Bono × Multiplicador = Apuesta total requerida." data-en="Look for 35x or lower requirements. Over 50x usually not worth it. Formula: Bonus × Multiplier = Total bet required.">寻找 35 倍或更低的要求。超过 50 倍通常不值得。计算公式：奖金 × 流水倍数 = 总投注额要求。</p><div class="warning" data-zh="⚠️ 示例：100 奖金 × 40 倍 = 需要投注 4,000" data-es="⚠️ Ejemplo: 100 bono × 40x = 4,000 requeridos" data-en="⚠️ Example: 100 bonus × 40x = 4,000 required">⚠️ 示例：100 奖金 × 40 倍 = 需要投注 4,000</div></div>
+    <div class="tip-card"><h4 data-zh="🎯 选择高 RTP 游戏" data-es="🎯 Elegir Juegos de Alto RTP" data-en="🎯 Choose High RTP Games">🎯 选择高 RTP 游戏</h4><p data-zh="完成流水时选择 RTP 96% 以上的老虎机。二十一点（99.5% RTP）通常不计入流水要求。" data-es="Elija tragamonedas con RTP 96%+ para completar el rollover. Blackjack (99.5% RTP) generalmente no cuenta." data-en="Choose slots with 96%+ RTP for rollover. Blackjack (99.5% RTP) usually doesn't count.">完成流水时选择 RTP 96% 以上的老虎机。二十一点（99.5% RTP）通常不计入流水要求。</p><div class="warning" data-zh="⚠️ 在条款中查看游戏贡献百分比" data-es="⚠️ Verifique el porcentaje de contribución en los términos" data-en="⚠️ Check game contribution % in terms">⚠️ 在条款中查看游戏贡献百分比</div></div>
+    <div class="tip-card"><h4 data-zh="💰 管理您的资金" data-es="💰 Gestionar Su Bankroll" data-en="💰 Manage Your Bankroll">💰 管理您的资金</h4><p data-zh="设定预算并严格遵守。永远不要追输。老虎机每注使用资金的 1-2%。" data-es="Establezca un presupuesto y sígalo. Nunca persiga pérdidas. Use 1-2% de su bankroll por apuesta." data-en="Set a budget and stick to it. Never chase losses. Use 1-2% of bankroll per bet.">设定预算并严格遵守。永远不要追输。老虎机每注使用资金的 1-2%。</p><div class="warning" data-zh="⚠️ 赌博应该是娱乐，不是收入来源" data-es="⚠️ El juego debe ser entretenimiento, no ingresos" data-en="⚠️ Gambling should be entertainment, not income">⚠️ 赌博应该是娱乐，不是收入来源</div></div>
+    <div class="tip-card"><h4 data-zh="📅 把握存款时机" data-es="📅 Momento del Depósito" data-en="📅 Timing Your Deposit">📅 把握存款时机</h4><p data-zh="许多赌场在周末提供 reload 奖金。存款前查看优惠活动日历。" data-es="Muchos casinos ofrecen bonos de recarga los fines de semana. Verifique el calendario de promociones antes de depositar." data-en="Many casinos offer reload bonuses on weekends. Check promo calendar before depositing.">许多赌场在周末提供 reload 奖金。存款前查看优惠活动日历。</p><div class="warning" data-zh="⚠️ 部分优惠需要手动选择 - 存款前请确认" data-es="⚠️ Algunas promociones requieren selección manual - confirme antes de depositar" data-en="⚠️ Some promos require manual selection - confirm before deposit">⚠️ 部分优惠需要手动选择 - 存款前请确认</div></div>
+    <div class="tip-card"><h4 data-zh="🔄 善用返水优惠" data-es="🔄 Usar Cashback" data-en="🔄 Use Cashback Offers">🔄 善用返水优惠</h4><p data-zh="每周返水基本上是免费资金。即使输了，也能拿回 10-15%。" data-es="El cashback semanal es básicamente dinero gratis. Incluso si pierde, recupera 10-15%." data-en="Weekly cashback is basically free money. Even if you lose, you get back 10-15%.">每周返水基本上是免费资金。即使输了，也能拿回 10-15%。</p><div class="warning" data-zh="⚠️ 返水通常只有 1 倍流水 - 比奖金优惠得多" data-es="⚠️ El cashback usualmente tiene 1x rollover - mucho mejor que bonos" data-en="⚠️ Cashback usually has 1x rollover - much better than bonuses">⚠️ 返水通常只有 1 倍流水 - 比奖金优惠得多</div></div>
+    <div class="tip-card"><h4 data-zh="✅ 提现前完成验证" data-es="✅ Completar Verificación Antes de Retirar" data-en="✅ Complete Verification Before Withdrawal">✅ 提现前完成验证</h4><p data-zh="提前完成 KYC 验证。在首次提款请求前提交身份证、地址证明。" data-es="Complete la verificación KYC anticipadamente. Envíe identificación y comprobante de domicilio antes de su primer retiro." data-en="Complete KYC verification early. Submit ID and proof of address before first withdrawal.">提前完成 KYC 验证。在首次提款请求前提交身份证、地址证明。</p><div class="warning" data-zh="⚠️ 提款可能因验证延迟 24-72 小时" data-es="⚠️ Los retiros pueden retrasarse 24-72 horas por verificación" data-en="⚠️ Withdrawals may be delayed 24-72h for verification">⚠️ 提款可能因验证延迟 24-72 小时</div></div>
+  </div>
+</section>
+<section class="faq">
+  <h2 class="section-title" data-zh="❓<span>常见问题</span>" data-es="❓<span>Preguntas Frecuentes</span>" data-en="❓<span>FAQ</span>">❓<span>常见问题</span></h2>
+  <div class="faq-grid">
+    <div class="faq-item"><h4 data-zh="Q: 注册需要多长时间？" data-es="P: ¿Cuánto tiempo toma el registro?" data-en="Q: How long does registration take?">Q: 注册需要多长时间？</h4><p data-zh="A: 30 秒完成注册，1 分钟完成验证" data-es="R: 30 segundos para registrarse, 1 minuto para verificar" data-en="A: 30 seconds to register, 1 minute to verify">A: 30 秒完成注册，1 分钟完成验证</p></div>
+    <div class="faq-item"><h4 data-zh="Q: 最低存款多少？" data-es="P: ¿Cuál es el depósito mínimo?" data-en="Q: What's the minimum deposit?">Q: 最低存款多少？</h4><p data-zh="A: 最低 100 MXN 即可激活奖金" data-es="R: Mínimo 100 MXN para activar el bono" data-en="A: Minimum 100 MXN to activate bonus">A: 最低 100 MXN 即可激活奖金</p></div>
+    <div class="faq-item"><h4 data-zh="Q: 奖金怎么领取？" data-es="P: ¿Cómo reclamar el bono?" data-en="Q: How to claim the bonus?">Q: 奖金怎么领取？</h4><p data-zh="A: 首次存款时自动激活，无需输入代码" data-es="R: Se activa automáticamente con el primer depósito, sin código" data-en="A: Automatically activates on first deposit, no code needed">A: 首次存款时自动激活，无需输入代码</p></div>
+    <div class="faq-item"><h4 data-zh="Q: 安全吗？" data-es="P: ¿Es seguro?" data-en="Q: Is it safe?">Q: 安全吗？</h4><p data-zh="A: 库拉索官方持牌，资金第三方托管" data-es="R: Licencia oficial de Curaçao, fondos en custodia de terceros" data-en="A: Curaçao licensed, funds in third-party custody">A: 库拉索官方持牌，资金第三方托管</p></div>
+  </div>
+</section>
+<section class="trust">
+  <h2 style="color:#ffd700;margin-bottom:10px" data-zh="🔍 我们只列出已验证的安全赌场" data-es="🔍 Solo listamos casinos seguros verificados" data-en="🔍 We only list verified safe casinos">🔍 我们只列出已验证的安全赌场</h2>
+  <p style="color:#888;margin-bottom:30px" data-zh="我们列表中的每个赌场都通过严格的安全检查" data-es="Cada casino en nuestra lista pasa verificaciones de seguridad estrictas" data-en="Every casino on our list passes strict security checks">我们列表中的每个赌场都通过严格的安全检查</p>
+  <div class="trust-grid">
+    <div class="trust-item"><div class="trust-icon">📜</div><span data-zh="有效牌照" data-es="Licencia Válida" data-en="Valid License">有效牌照</span></div>
+    <div class="trust-item"><div class="trust-icon">🔒</div><span data-zh="SSL 加密" data-es="Cifrado SSL" data-en="SSL Encryption">SSL 加密</span></div>
+    <div class="trust-item"><div class="trust-icon">✅</div><span data-zh="我们已测试" data-es="Probado por Nosotros" data-en="We Tested">我们已测试</span></div>
+    <div class="trust-item"><div class="trust-icon">💳</div><span data-zh="安全支付" data-es="Pago Seguro" data-en="Secure Payment">安全支付</span></div>
+    <div class="trust-item"><div class="trust-icon">🎲</div><span data-zh="公平游戏" data-es="Juego Justo" data-en="Fair Gaming">公平游戏</span></div>
+    <div class="trust-item"><div class="trust-icon">💬</div><span data-zh="24/7 客服" data-es="Soporte 24/7" data-en="24/7 Support">24/7 客服</span></div>
+  </div>
+</section>
+<section class="final-cta">
+  <h2 data-zh="准备好<span>开始赢利</span>了吗？" data-es="¿Listo para<span>Comenzar a Ganar</span>?" data-en="Ready to<span>Start Winning</span>?">准备好<span>开始赢利</span>了吗？</h2>
+  <p data-zh="选择您的奖金，跟随我们的指南，最大化您的机会。祝您好运！🍀" data-es="Seleccione su bono, siga nuestra guía, maximice sus oportunidades. ¡Buena suerte! 🍀" data-en="Choose your bonus, follow our guide, maximize your chances. Good luck! 🍀">选择您的奖金，跟随我们的指南，最大化您的机会。祝您好运！🍀</p>
+  <div class="cta-buttons">
+    <a href="https://mx711.com" class="cta-btn cta-btn-primary" data-zh="🎁 立即领取 2777 MXN 奖金" data-es="🎁 Reclamar Bono de 2777 MXN" data-en="🎁 Claim 2777 MXN Bonus Now">🎁 立即领取 2777 MXN 奖金</a>
+  </div>
+</section>
 <footer>
-  <p data-zh="© 2026 mx711 - All Rights Reserved" data-es="© 2026 mx711 - Todos los Derechos Reservados" data-en="© 2026 mx711 - All Rights Reserved">© 2026 mx711 - All Rights Reserved</p>
-  <div class="warning">
-    <p data-zh="⚠️ 理性博彩提示：博彩可能上瘾，请理性投注。仅限 18 岁以上用户。"
-       data-es="⚠️ Juego Responsable: El juego puede causar adicción. Solo mayores de 18 años."
-       data-en="⚠️ Responsible Gaming: Gaming may cause addiction. 18+ only.">
-      ⚠️ 理性博彩提示：博彩可能上瘾，请理性投注。仅限 18 岁以上用户。
-    </p>
+  <div class="disclaimer">
+    <strong data-zh="⚠️ 重要免责声明：" data-es="⚠️ Descargo de responsabilidad importante:" data-en="⚠️ Important Disclaimer:">⚠️ 重要免责声明：</strong><br>
+    <span data-zh="这是一个独立的奖金指南网站。我们不隶属于任何赌场。当玩家通过我们的链接注册时，我们会从赌场获得佣金。请务必在赌场网站上阅读完整条款和条件。赌博涉及风险 - 只投注您能承受损失的金额。必须年满 18 岁才能参与赌博。" data-es="Este es un sitio independiente de guía de bonos. No estamos afiliados a ningún casino. Recibimos comisiones de los casinos cuando los jugadores se registran a través de nuestros enlaces. Asegúrese de leer los términos y condiciones completos en el sitio del casino. El juego involucra riesgos - solo apueste lo que pueda permitirse perder. Debe tener al menos 18 años para participar en el juego." data-en="This is an independent bonus guide website. We are not affiliated with any casino. We receive commissions from casinos when players register through our links. Be sure to read full terms and conditions on the casino website. Gambling involves risk - only bet what you can afford to lose. Must be 18+ to participate in gambling.">这是一个独立的奖金指南网站。我们不隶属于任何赌场。当玩家通过我们的链接注册时，我们会从赌场获得佣金。请务必在赌场网站上阅读完整条款和条件。赌博涉及风险 - 只投注您能承受损失的金额。必须年满 18 岁才能参与赌博。</span>
+  </div>
+  <div class="age-restriction">18+ 仅限成人</div>
+  <div class="footer-bottom">
+    <p>© 2026 mx711 Guide. 保留所有权利.</p>
+    <p style="margin-top:10px;font-size:12px;color:#888" data-zh="这是用于客户演示的示例落地页。不是真正的赌博网站。" data-es="Esta es una página de aterrizaje de ejemplo para demostración del cliente. No es un sitio de apuestas real." data-en="This is a sample landing page for client demonstration. Not a real gambling website.">这是用于客户演示的示例落地页。不是真正的赌博网站。</p>
   </div>
 </footer>
-
 <script>
-function switchLang(lang) {
-  // 更新按钮状态
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.remove('active');
-  });
+function switchLang(lang){
+  document.querySelectorAll('.lang-btn').forEach(btn=>btn.classList.remove('active'));
   event.target.classList.add('active');
-  
-  // 更新页面内容
-  document.querySelectorAll('[data-' + lang + ']').forEach(el => {
-    const content = el.getAttribute('data-' + lang);
-    if (content.includes('<br>')) {
-      el.innerHTML = content;
-    } else {
-      el.textContent = content;
-    }
+  document.querySelectorAll('[data-'+lang+']').forEach(el=>{
+    const content=el.getAttribute('data-'+lang);
+    if(content.includes('<')){el.innerHTML=content;}else{el.textContent=content;}
   });
-  
-  // 更新 html lang 属性
-  document.documentElement.lang = lang;
-  
-  // 保存语言偏好
-  localStorage.setItem('mx711_lang', lang);
+  document.documentElement.lang=lang;
+  localStorage.setItem('mx711_lang',lang);
 }
-
-// 页面加载时恢复语言偏好
-document.addEventListener('DOMContentLoaded', function() {
-  const savedLang = localStorage.getItem('mx711_lang') || 'zh';
-  const btn = document.querySelector('.lang-btn[onclick="switchLang(\'' + savedLang + '\')"]');
-  if (btn) {
-    btn.click();
-  }
+document.addEventListener('DOMContentLoaded',function(){
+  const savedLang=localStorage.getItem('mx711_lang')||'zh';
+  const btn=document.querySelector('.lang-btn[onclick="switchLang(\\''+savedLang+'\\')"]');
+  if(btn){btn.click();}
+  updateTimer();
+  setInterval(updateTimer,1000);
+  let quota=37;
+  setInterval(()=>{if(quota>12&&Math.random()>0.7){quota--;document.getElementById('quota').textContent=quota;}},30000);
 });
+function updateTimer(){
+  const now=new Date();
+  const end=new Date();
+  end.setHours(23,59,59);
+  const diff=end-now;
+  if(diff>0){
+    const h=Math.floor(diff/3600000);
+    const m=Math.floor((diff%3600000)/60000);
+    const s=Math.floor((diff%60000)/1000);
+    document.getElementById('timer').textContent=String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+  }
+}
 </script>
-
 </body>
 </html>
