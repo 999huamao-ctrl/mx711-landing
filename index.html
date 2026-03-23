@@ -252,35 +252,70 @@
   </div>
 </footer>
 <script>
-function switchLang(lang){
-  document.querySelectorAll('.lang-btn').forEach(btn=>btn.classList.remove('active'));
-  event.target.classList.add('active');
-  document.querySelectorAll('[data-'+lang+']').forEach(el=>{
-    const content=el.getAttribute('data-'+lang);
-    if(content.includes('<')){el.innerHTML=content;}else{el.textContent=content;}
+let currentLang = 'zh';
+
+function switchLang(lang) {
+  currentLang = lang;
+  
+  // 更新按钮状态
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.remove('active');
   });
-  document.documentElement.lang=lang;
-  localStorage.setItem('mx711_lang',lang);
+  event.target.classList.add('active');
+  
+  // 更新页面内容
+  document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+    const content = el.getAttribute('data-' + lang);
+    if (content.includes('<')) {
+      el.innerHTML = content;
+    } else {
+      el.textContent = content;
+    }
+  });
+  
+  // 更新 html lang 属性
+  document.documentElement.lang = lang;
+  
+  // 保存语言偏好
+  localStorage.setItem('mx711_lang', lang);
 }
-document.addEventListener('DOMContentLoaded',function(){
-  const savedLang=localStorage.getItem('mx711_lang')||'zh';
-  const btn=document.querySelector('.lang-btn[onclick="switchLang(\\''+savedLang+'\\')"]');
-  if(btn){btn.click();}
+
+// 页面加载时恢复语言偏好
+document.addEventListener('DOMContentLoaded', function() {
+  const savedLang = localStorage.getItem('mx711_lang') || 'zh';
+  const btn = document.querySelector('.lang-btn[onclick="switchLang(\\'' + savedLang + '\\')"]');
+  if (btn) {
+    btn.click();
+  }
+  
+  // 启动倒计时
   updateTimer();
-  setInterval(updateTimer,1000);
-  let quota=37;
-  setInterval(()=>{if(quota>12&&Math.random()>0.7){quota--;document.getElementById('quota').textContent=quota;}},30000);
+  setInterval(updateTimer, 1000);
+  
+  // 名额递减
+  let quota = 37;
+  setInterval(() => {
+    if (quota > 12 && Math.random() > 0.7) {
+      quota--;
+      const quotaEl = document.getElementById('quota');
+      if (quotaEl) quotaEl.textContent = quota;
+    }
+  }, 30000);
 });
-function updateTimer(){
-  const now=new Date();
-  const end=new Date();
-  end.setHours(23,59,59);
-  const diff=end-now;
-  if(diff>0){
-    const h=Math.floor(diff/3600000);
-    const m=Math.floor((diff%3600000)/60000);
-    const s=Math.floor((diff%60000)/1000);
-    document.getElementById('timer').textContent=String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+
+function updateTimer() {
+  const now = new Date();
+  const end = new Date();
+  end.setHours(23, 59, 59);
+  const diff = end - now;
+  if (diff > 0) {
+    const h = Math.floor(diff / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    const timerEl = document.getElementById('timer');
+    if (timerEl) {
+      timerEl.textContent = String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+    }
   }
 }
 </script>
