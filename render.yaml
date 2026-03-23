@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: mx711-landing
+    runtime: static
+    buildCommand: echo "Deploying static site"
+    staticPublishPath: .
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=3600
+    envVars:
+      - key: NODE_ENV
+        value: production

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>mx711 - Redirect</title>
+<script>
+// 自动检测语言并跳转
+const lang = navigator.language || navigator.userLanguage;
+const langCode = lang.split('-')[0].toLowerCase();
+
+// 语言映射
+const langMap = {
+  'zh': 'index-zh.html',
+  'es': 'index-es.html',
+  'en': 'index-en.html'
+};
+
+// 默认西班牙语，跳转
+const target = langMap[langCode] || 'index-es.html';
+window.location.href = target;
+</script>
+</head>
+<body style="display:flex;justify-content:center;align-items:center;height:100vh;margin:0;background:#f5f5f5;font-family:Arial,sans-serif">
+<noscript>
+  <div style="text-align:center">
+    <p><strong>mx711</strong></p>
+    <p>请选择语言 / Select Language / 选择語言：</p>
+    <p>
+      <a href="index-zh.html">中文</a> | 
+      <a href="index-es.html">Español</a> | 
+      <a href="index-en.html">English</a>
+    </p>
+  </div>
+</noscript>
+<p>Redirecting... / Redirigiendo... / 跳转中...</p>
+</body>
+</html>
